@@ -1,6 +1,8 @@
 // Get the modal
 var modal = document.getElementById("id01");
 var modal = document.getElementById("id02");
+var modal = document.getElementById('id03');
+
 
 fetch("https://vast-escarpment-76787.herokuapp.com/show-Vehicle")
   .then((res) => res.json())
@@ -14,11 +16,14 @@ function dealership(vehicle) {
   vehicle_container.innerHTML = "";
   vehicle.data.forEach((car) => {
     vehicle_container.innerHTML += `
+    
     <div class = "vehicle">
     <div class="card">
     <div class="box-image">
+    <div class="circle">
+      <p id="car-id" class="vehicle-id">${car.id}</p>
+      </div>
         <img src="${car.image_url}" class="vehicle-image size1">
-
         </div>
         <div class="box-content text-center">
         <h4 class="vehicle-name"> ${car.name}</h4>
@@ -26,16 +31,27 @@ function dealership(vehicle) {
         <p class="vehicle-price">Price: R${car.price} </p>
         <p class="vehicle-type">Type: ${car.type}</p>
         <p class="vehicle-year">Year: ${car.year}</p>
-         <button onclick="addTocart(${car.id})"> Purchase</button>
+        <button onclick="addToCart(${car.id})" class="purchase text-bold">PURCHASE</button>
+        
         </div>
+            
     </div>
+    
     </div>
+
     `;
   });
-}
-function addTocart(id) {
-  let product = products.find((item) => {
-    return item.id == id;
+//* Add to cart functions*//
+function addToCart(id) {
+  let vehicle_container = vehicle.data.find((item) => {
+    return (item.id = id);
   });
-  console.log(product);
+  console.log(vehicle_container);
+  cart.push(vehicle_container);
+  console.log("See Cart Items Here: ", cart);
+}  
 }
+
+
+// ------------------------------       --------------------------------
+

@@ -1,17 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Products</title>
     <script src="./JavaScript/Jscript.js"></script>
-    <link rel="stylesheet" href="./styles/vehicles.css">
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/vehicles.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/login.css" />
+  </head>
+  <body>
+    <button
+      onclick="document.getElementById('id03').style.display='block'"
+      style="width: auto"
+    >
+      Create Vehicle
+    </button>
+
+      <div id="id03" class="modal">
+        <span
+          onclick="document.getElementById('id03').style.display='none'"
+          class="close"
+          title="Close Modal"
+          >&times;</span
+        >
+        <form class="modal-content" action="/action_page.php">
+          <div class="container">
+            <h1>Create Vehicle</h1>
+            <p>Enter Details To Create Vehicle.</p>
+            <hr />
+            <div class="center">
+            <label for="name"><b>name</b></label>
+            <input
+              type="text"
+              placeholder="vehicle name"
+              name="name"
+              required
+            />
+            <label for="email"><b>brand</b></label>
+            <input
+              type="text"
+              placeholder="vehicle brand"
+              name="brand"
+              required
+            />
+            <label for="email"><b>price</b></label>
+            <input
+              type="text"
+              placeholder="vehicle price"
+              name="price"
+              required
+            />
+            <label for="email"><b>type</b></label>
+            <input
+              type="text"
+              placeholder="vehicle type"
+              name="type"
+              required
+            />
+            <label for="email"><b>year</b></label>
+            <input
+              type="text"
+              placeholder="vehicle year"
+              name="year"
+              required
+            />
+            <label for="email"><b>image</b></label>
+            <input
+              type="text"
+              placeholder="image url"
+              name="image_url"
+              required
+            />
+            <label for="email"><b>logo</b></label>
+            <input
+              type="text"
+              placeholder="logo url"
+              name="logo_url"
+              required
+            />
+            <div class="clearfix">
+              <button
+                type="button"
+                onclick="document.getElementById('id03').style.display='none'"
+                class="cancelbtn"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="signupbtn">Create</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <div class="header">
-        <h1 class="heading">Welcome To My Car Dealership..</h1>
-        </div>
+      <h1 class="heading">Welcome To My Car Dealership..</h1>
+    </div>
+
     <div id="vehiclecontainer" class="vehicle-container"></div>
-</body>
+  </body>
 </html>
