@@ -4,7 +4,9 @@ body {
   box-sizing: border-box;
 }
 .center {
-  padding-left: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .inner-form {

@@ -15,7 +15,7 @@ img.vehicle-image {
   display: inline-block;
 }
 .vehicle-container {
-  margin-top: 10vh;
+  margin-top: 5vh;
   position: inherit;
 }
 .card {
@@ -100,4 +100,13 @@ img.vehicle-image {
   width: 200px;
   height: 200px;
   align-self: center;
+}
+form {
+  display: flex;
+}
+.btn-buttons {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
 }

@@ -10,35 +10,98 @@
     <link rel="stylesheet" href="./styles/login.css" />
   </head>
   <body>
-    <button
+    <!-- search item here -->
+    <div class="btn-buttons">
+      <button
       onclick="document.getElementById('id03').style.display='block'"
       style="width: auto"
-    >
-      Create Vehicle
+      >
+      Add Vehicle
     </button>
+    <button
+onclick="document.getElementById('id04').style.display='block'"
+style="width: auto"
+>
+Update Vehicle
+</button>
+<button
+onclick="document.getElementById('id03').style.display='block'"
+style="width: auto"
+>
+Remove Vehicle
+</button>
+<button onclick="document.getElementById('id05').style.display='block'" style="width: auto;">
+  Cart
+</button>
+</div>
+<!-- -----------------------creating products here ------------------------ -->
+<!-- -----------------------my cart ------------------------ -->
+<div id="id05" class="modal container"> 
+  <span
+  onclick="document.getElementById('id05').style.display='none'"
+  class="close"
+  title="Close Modal"
+  >&times;</span
+  >
+  <div id="alerts"></div>
+  <div class="productcont">
+  </div>
+  <div class="cart-container">
+    <h2>Cart</h2>
+    <table>
+      <thead>
+        <tr>
+        <th><strong>Product</strong></th>
+        <th><strong>Price</strong></th>
+      </tr>
+      </thead>
+      <tbody id="carttable">
+      </tbody>
+    </table>
+    <hr>
+    <table id="carttotals">
+      <tr>
+        <td><strong>Items</strong></td>
+        <td><strong>Total</strong></td>
+      </tr>
+      <tr>
+        <td>x <span id="itemsquantity">0</span></td>
+       
+        <td>R<span id="total">0</span></td>
+      </tr></table>
 
-      <div id="id03" class="modal">
-        <span
-          onclick="document.getElementById('id03').style.display='none'"
-          class="close"
-          title="Close Modal"
-          >&times;</span
-        >
-        <form class="modal-content" action="/action_page.php">
-          <div class="container">
-            <h1>Create Vehicle</h1>
-            <p>Enter Details To Create Vehicle.</p>
-            <hr />
-            <div class="center">
-            <label for="name"><b>name</b></label>
-            <input
+      
+    <div class="cart-buttons">  
+      <button id="emptycart">Empty Cart</button>
+      <button id="checkout">Checkout</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- -----------------------my cart ------------------------ -->
+<div id="id03" class="modal">
+  <span
+  onclick="document.getElementById('id03').style.display='none'"
+  class="close"
+  title="Close Modal"
+  >&times;</span
+  >
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Add Vehicle</h1>
+      <p>Enter Details To Add  A Vehicle.</p>
+      <hr />
+      <div class="center">
+              <label for="name"><b>name</b></label>
+              <input
               type="text"
               placeholder="vehicle name"
               name="name"
               required
-            />
-            <label for="email"><b>brand</b></label>
-            <input
+              />
+              <label for="brand"><b>brand</b></label>
+              <input
               type="text"
               placeholder="vehicle brand"
               name="brand"
@@ -46,20 +109,20 @@
             />
             <label for="email"><b>price</b></label>
             <input
-              type="text"
+            type="text"
               placeholder="vehicle price"
               name="price"
               required
             />
-            <label for="email"><b>type</b></label>
+            <label for="type"><b>type</b></label>
             <input
-              type="text"
+            type="text"
               placeholder="vehicle type"
               name="type"
               required
-            />
-            <label for="email"><b>year</b></label>
-            <input
+              />
+              <label for="email"><b>year</b></label>
+              <input
               type="text"
               placeholder="vehicle year"
               name="year"
@@ -74,29 +137,195 @@
             />
             <label for="email"><b>logo</b></label>
             <input
-              type="text"
-              placeholder="logo url"
-              name="logo_url"
-              required
+            type="text"
+            placeholder="logo url"
+            name="logo_url"
+            required
             />
             <div class="clearfix">
+              <button type="submit" class="signupbtn">Add</button>
+              
               <button
                 type="button"
                 onclick="document.getElementById('id03').style.display='none'"
                 class="cancelbtn"
-              >
+                >
                 Cancel
               </button>
-              <button type="submit" class="signupbtn">Create</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <div class="header">
-      <h1 class="heading">Welcome To My Car Dealership..</h1>
-    </div>
+<!-- -----------------------------end of creating products ---------------------------------- -->
 
+
+<!-- -----------------------------start of updating  products ---------------------------------- -->
+
+<div id="id04" class="modal">
+  <span
+    onclick="document.getElementById('id04').style.display='none'"
+    class="close"
+    title="Close Modal"
+    >&times;</span
+  >
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Update vehicle</h1>
+      <p>Enter Details To Update Vehicle.</p>
+      <hr />
+      <div class="center">
+      <label for="name"><b>name</b></label>
+      <input
+        type="text"
+        placeholder="vehicle name"
+        name="name"
+        required
+      />
+      <label for="brand"><b>brand</b></label>
+      <input
+        type="text"
+        placeholder="vehicle brand"
+        name="brand"
+        required
+      />
+      <label for="email"><b>price</b></label>
+      <input
+        type="text"
+        placeholder="vehicle price"
+        name="price"
+        required
+      />
+      <label for="type"><b>type</b></label>
+      <input
+        type="text"
+        placeholder="vehicle type"
+        name="type"
+        required
+      />
+      <label for="email"><b>year</b></label>
+      <input
+        type="text"
+        placeholder="vehicle year"
+        name="year"
+        required
+      />
+      <label for="email"><b>image</b></label>
+      <input
+        type="text"
+        placeholder="image url"
+        name="image_url"
+        required
+      />
+      <label for="email"><b>logo</b></label>
+      <input
+        type="text"
+        placeholder="logo url"
+        name="logo_url"
+        required
+      />
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">UPDATE</button>
+        <button
+          type="button"
+          onclick="document.getElementById('id04').style.display='none'"
+          class="cancelbtn"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+<!-- -----------------------------end of updating products ---------------------------------- -->
+<!-- --------------------------------------remove vehicle-------------------------------------- -->
+
+<div id="id03" class="modal">
+  <span
+    onclick="document.getElementById('id03').style.display='none'"
+    class="close"
+    title="Close Modal"
+    >&times;</span
+  >
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Remove Vehicle</h1>
+      <p>Enter Details To Remove  A Vehicle.</p>
+      <hr />
+      <div class="center">
+      <label for="name"><b>name</b></label>
+      <input
+        type="text"
+        placeholder="vehicle name"
+        name="name"
+        required
+      />
+      <label for="brand"><b>brand</b></label>
+      <input
+        type="text"
+        placeholder="vehicle brand"
+        name="brand"
+        required
+      />
+      <label for="email"><b>price</b></label>
+      <input
+        type="text"
+        placeholder="vehicle price"
+        name="price"
+        required
+      />
+      <label for="type"><b>type</b></label>
+      <input
+        type="text"
+        placeholder="vehicle type"
+        name="type"
+        required
+      />
+      <label for="email"><b>year</b></label>
+      <input
+        type="text"
+        placeholder="vehicle year"
+        name="year"
+        required
+      />
+      <label for="email"><b>image</b></label>
+      <input
+        type="text"
+        placeholder="image url"
+        name="image_url"
+        required
+      />
+      <label for="email"><b>logo</b></label>
+      <input
+        type="text"
+        placeholder="logo url"
+        name="logo_url"
+        required
+      />
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Remove</button>
+        <button
+          type="button"
+          onclick="document.getElementById('id03').style.display='none'"
+          class="cancelbtn"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+<div class="header">
+  <h1 class="heading">Welcome To My Car Dealership..</h1>
+</div>
+<div id="search">
+  <form onsubmit="event.preventDefault(); searchVehicles();">
+    <input type="text" required id="searchTerm" />
+    <button type="submit">search</button>
+  </form>
+</div>
     <div id="vehiclecontainer" class="vehicle-container"></div>
   </body>
 </html>
