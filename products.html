@@ -13,7 +13,7 @@
     <!-- search item here -->
     <div class="btn-buttons">
       <button
-      onclick="document.getElementById('id03').style.display='block'"
+      onclick="document.getElementById('id001').style.display='block'"
       style="width: auto"
       >
       Add Vehicle
@@ -35,9 +35,9 @@ Remove Vehicle
 </button>
 </div>
 <!-- -----------------------creating products here ------------------------ -->
-    <div id="id03" class="modal">
+    <div id="id001" class="modal">
       <span
-      onclick="document.getElementById('id03').style.display='none'"
+      onclick="document.getElementById('id001').style.display='none'"
       class="close"
       title="Close Modal"
       >&times;</span
@@ -47,7 +47,7 @@ Remove Vehicle
           <h1>Add Vehicle</h1>
           <p>Enter Details To Add  A Vehicle.</p>
           <hr />
-          <div class="center">
+          <div class="container1 center">
                   <label for="name"><b>name</b></label>
                   <input
                   type="text"
@@ -102,7 +102,7 @@ Remove Vehicle
                   
                   <button
                     type="button"
-                    onclick="document.getElementById('id03').style.display='none'"
+                    onclick="document.getElementById('id001').style.display='none'"
                     class="cancelbtn"
                     >
                     Cancel
@@ -121,22 +121,9 @@ Remove Vehicle
   title="Close Modal"
   >&times;</span
   >
-  <div id="alerts"></div>
-  <div class="productcont">
-  </div>
   <div class="cart-container">
     <h2>Purchase Vehicle</h2>
-    <table>
-      <thead>
-        <tr>
-        <th><strong>Product</strong></th>
-        <th><strong>Price</strong></th>
-      </tr>
-      </thead>
-      <tbody id="carttable">
-      </tbody>
-    </table>
-    <hr>
+   
     <table id="carttotals">
       <tr>
         <td><strong>Items</strong></td>
@@ -174,7 +161,7 @@ Remove Vehicle
       <h1>Update vehicle</h1>
       <p>Enter Details To Update Vehicle.</p>
       <hr />
-      <div class="center">
+      <div class="container1 center">
       <label for="name"><b>name</b></label>
       <input
         type="text"
@@ -248,59 +235,17 @@ Remove Vehicle
     title="Close Modal"
     >&times;</span
   >
-  <form class="modal-content" action="https://vast-escarpment-76787.herokuapp.com/edit-car" method="PUT">
+  <form class="modal-content" action="https://vast-escarpment-76787.herokuapp.com/delete-car/" method="POST">
     <div class="container">
       <h1>Remove Vehicle</h1>
-      <p>Enter Details To Remove  A Vehicle.</p>
+      <p>Enter Vehicle-ID To Remove  A Vehicle.</p>
       <hr />
-      <div class="center">
-      <label for="name"><b>name</b></label>
+      <div class="container1 center">
+      <label for="vehicle-id"><b>Vehicle-ID</b></label>
       <input
         type="text"
-        placeholder="vehicle name"
-        name="name"
-        required
-      />
-      <label for="brand"><b>brand</b></label>
-      <input
-        type="text"
-        placeholder="vehicle brand"
-        name="brand"
-        required
-      />
-      <label for="email"><b>price</b></label>
-      <input
-        type="text"
-        placeholder="vehicle price"
-        name="price"
-        required
-      />
-      <label for="type"><b>type</b></label>
-      <input
-        type="text"
-        placeholder="vehicle type"
-        name="type"
-        required
-      />
-      <label for="email"><b>year</b></label>
-      <input
-        type="text"
-        placeholder="vehicle year"
-        name="year"
-        required
-      />
-      <label for="email"><b>image</b></label>
-      <input
-        type="text"
-        placeholder="image url"
-        name="image_url"
-        required
-      />
-      <label for="email"><b>logo</b></label>
-      <input
-        type="text"
-        placeholder="logo url"
-        name="logo_url"
+        placeholder="Eg. 1"
+        name="vehicle-id"
         required
       />
       <div class="clearfix">

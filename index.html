@@ -10,6 +10,11 @@
   </head>
   <body>
     <!-- landing page Section -->
+    <script>
+      function confirmInput() {
+        fname = document.forms[0].fname.value;
+      }
+      </script>
     <section class="landing" id="section">
       <div class="outer-form">
         <h1 class="heading">Mpendulo's Vehicle Dealership.</h1>
@@ -30,11 +35,7 @@
           </button>
 
           <div id="id01" class="modal">
-            <form
-              class="modal-content animate"
-              action="https://vast-escarpment-76787.herokuapp.com/auth"
-              method="POST"
-            >
+            <form onsubmit="confirmInput()" action="./products.html" class="modal-content animate">
               <div class="imgcontainer">
                 <span
                   onclick="document.getElementById('id01').style.display='none'"
@@ -70,7 +71,9 @@
                   Remember me
                 </label>
                 <div class="container">
-                  <button  type="submit">Login</button>
+                  <a href="./products.html"
+                    ><button type="submit">Login</button></a
+                  >
 
                   <button
                     type="button"
