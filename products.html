@@ -35,6 +35,84 @@ Remove Vehicle
 </button>
 </div>
 <!-- -----------------------creating products here ------------------------ -->
+    <div id="id03" class="modal">
+      <span
+      onclick="document.getElementById('id03').style.display='none'"
+      class="close"
+      title="Close Modal"
+      >&times;</span
+      >
+      <form class="modal-content" action="https://vast-escarpment-76787.herokuapp.com/create-dealership" method="POST">
+        <div class="container">
+          <h1>Add Vehicle</h1>
+          <p>Enter Details To Add  A Vehicle.</p>
+          <hr />
+          <div class="center">
+                  <label for="name"><b>name</b></label>
+                  <input
+                  type="text"
+                  placeholder="vehicle name"
+                  name="name"
+                  required
+                  />
+                  <label for="brand"><b>brand</b></label>
+                  <input
+                  type="text"
+                  placeholder="vehicle brand"
+                  name="brand"
+                  required
+                />
+                <label for="email"><b>price</b></label>
+                <input
+                type="text"
+                  placeholder="vehicle price"
+                  name="price"
+                  required
+                />
+                <label for="type"><b>type</b></label>
+                <input
+                type="text"
+                  placeholder="vehicle type"
+                  name="type"
+                  required
+                  />
+                  <label for="email"><b>year</b></label>
+                  <input
+                  type="text"
+                  placeholder="vehicle year"
+                  name="year"
+                  required
+                />
+                <label for="email"><b>image</b></label>
+                <input
+                  type="text"
+                  placeholder="image url"
+                  name="image_url"
+                  required
+                />
+                <label for="email"><b>logo</b></label>
+                <input
+                type="text"
+                placeholder="logo url"
+                name="logo_url"
+                required
+                />
+                <div class="clearfix">
+                  <button type="submit" class="signupbtn">Add</button>
+                  
+                  <button
+                    type="button"
+                    onclick="document.getElementById('id03').style.display='none'"
+                    class="cancelbtn"
+                    >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    <!-- -----------------------------end of creating products ---------------------------------- -->
 <!-- -----------------------my cart ------------------------ -->
 <div id="id05" class="modal container"> 
   <span
@@ -47,7 +125,7 @@ Remove Vehicle
   <div class="productcont">
   </div>
   <div class="cart-container">
-    <h2>Cart</h2>
+    <h2>Purchase Vehicle</h2>
     <table>
       <thead>
         <tr>
@@ -72,7 +150,7 @@ Remove Vehicle
 
       
     <div class="cart-buttons">  
-      <button id="emptycart">Empty Cart</button>
+      <button  id="emptycart">Empty Cart</button>
       <button id="checkout">Checkout</button>
     </div>
   </div>
@@ -80,84 +158,6 @@ Remove Vehicle
 
 
 <!-- -----------------------my cart ------------------------ -->
-<div id="id03" class="modal">
-  <span
-  onclick="document.getElementById('id03').style.display='none'"
-  class="close"
-  title="Close Modal"
-  >&times;</span
-  >
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Add Vehicle</h1>
-      <p>Enter Details To Add  A Vehicle.</p>
-      <hr />
-      <div class="center">
-              <label for="name"><b>name</b></label>
-              <input
-              type="text"
-              placeholder="vehicle name"
-              name="name"
-              required
-              />
-              <label for="brand"><b>brand</b></label>
-              <input
-              type="text"
-              placeholder="vehicle brand"
-              name="brand"
-              required
-            />
-            <label for="email"><b>price</b></label>
-            <input
-            type="text"
-              placeholder="vehicle price"
-              name="price"
-              required
-            />
-            <label for="type"><b>type</b></label>
-            <input
-            type="text"
-              placeholder="vehicle type"
-              name="type"
-              required
-              />
-              <label for="email"><b>year</b></label>
-              <input
-              type="text"
-              placeholder="vehicle year"
-              name="year"
-              required
-            />
-            <label for="email"><b>image</b></label>
-            <input
-              type="text"
-              placeholder="image url"
-              name="image_url"
-              required
-            />
-            <label for="email"><b>logo</b></label>
-            <input
-            type="text"
-            placeholder="logo url"
-            name="logo_url"
-            required
-            />
-            <div class="clearfix">
-              <button type="submit" class="signupbtn">Add</button>
-              
-              <button
-                type="button"
-                onclick="document.getElementById('id03').style.display='none'"
-                class="cancelbtn"
-                >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-<!-- -----------------------------end of creating products ---------------------------------- -->
 
 
 <!-- -----------------------------start of updating  products ---------------------------------- -->
@@ -169,7 +169,7 @@ Remove Vehicle
     title="Close Modal"
     >&times;</span
   >
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" action="https://vast-escarpment-76787.herokuapp.com/edit-car/" method="PUT">
     <div class="container">
       <h1>Update vehicle</h1>
       <p>Enter Details To Update Vehicle.</p>
@@ -248,7 +248,7 @@ Remove Vehicle
     title="Close Modal"
     >&times;</span
   >
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" action="https://vast-escarpment-76787.herokuapp.com/edit-car" method="PUT">
     <div class="container">
       <h1>Remove Vehicle</h1>
       <p>Enter Details To Remove  A Vehicle.</p>
