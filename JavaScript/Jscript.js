@@ -82,30 +82,32 @@ function renderCart(cartItemContainer) {
 
     `;
     });
-    let totalVehiclePrice = cartItemContainer.reduce((total, item) => total + parseInt(item.price), 1);
-    console.log(totalVehiclePrice)
-    cartContainer.innerHTML +=`<h5>Total: R ${totalVehiclePrice}</h5>`;
+    let totalVehiclePrice = cartItemContainer.reduce(
+      (total, item) => total + parseInt(item.price),
+      0
+    );
+    console.log(totalVehiclePrice);
+    cartContainer.innerHTML += `<h5>Total: R ${totalVehiclePrice}</h5>`;
   } else {
     cartContainer.innerHTML = "<h2>No items on cart</h2>";
   }
 }
-
 function removeItem(id) {
-  // vehicles = data
-  // removeItem(data)
-  // removeItem(vehicles)
-  let product = vehicles.data.find((item) => {
+  vehicles1 = veihcles.data
+  removeItem(data)
+  removeItem(vehicles1)
+  let product = vehicles1.data.find((item) => {
     return item.id == id;
   });
-  //console.log(product);
+  console.log(product);
 
   cart.splice(
     cart.findIndex((a) => a.id === product.id),
     1
   );
   renderCart(cart);
+  removeItem(product);
 }
-
 
 function addToCart(id) {
   let vehicle = vehicles.data.find((item) => {
