@@ -73,7 +73,7 @@ function renderCart(cartItemContainer) {
         <p class="vehicle-price">Price: R${cartItem.price} </p>
         <p class="vehicle-type">Type: ${cartItem.type}</p>
         <p class="vehicle-year">Year: ${cartItem.year}</p>
-        <button class="remove-btn purchase text-bold">Remove</button>
+        <button onclick="removeItem()" class="remove-btn purchase text-bold">Remove</button>
         </div>
             
     </div>
@@ -82,12 +82,30 @@ function renderCart(cartItemContainer) {
 
     `;
     });
-    // let totalVehiclePrice = cartItems.reduce((total, item) => total + item,price, 0);
-    // cartContainer.innerHTML +=`<h5>Total: ${totalVehiclePrice}</h5>`;
+    let totalVehiclePrice = cartItemContainer.reduce((total, item) => total + parseInt(item.price), 1);
+    console.log(totalVehiclePrice)
+    cartContainer.innerHTML +=`<h5>Total: R ${totalVehiclePrice}</h5>`;
   } else {
     cartContainer.innerHTML = "<h2>No items on cart</h2>";
   }
 }
+
+function removeItem(id) {
+  // vehicles = data
+  // removeItem(data)
+  // removeItem(vehicles)
+  let product = vehicles.data.find((item) => {
+    return item.id == id;
+  });
+  //console.log(product);
+
+  cart.splice(
+    cart.findIndex((a) => a.id === product.id),
+    1
+  );
+  renderCart(cart);
+}
+
 
 function addToCart(id) {
   let vehicle = vehicles.data.find((item) => {
@@ -99,23 +117,7 @@ function addToCart(id) {
   renderCart(cart);
 }
 // Remove Items From Cart
-$(".remove-btn").click(function () {
-  event.preventDefault();
-  $(this).parent().parent().hide(400);
-});
-// function updateCartTotal() {
-//   var cartItemContainer = document.getElementsByClassName("vehicle")[0];
-//   var cartRows = cartItemContainer.getElementsByClassName("card");
-//   for (var i = 0; i < cartRows.length; i++) {
-//     var cartRow = cartRows[i];
-//     var priceElement = cartRow.getElementsByClassName("vehicle-price")[0].price;
-//     var quantityElement = cartRow.getElementById("itemsquantity")[0].name;
-//     var price = priceElement.innerText;
-//     console.log(price);
-//   }
-// }
-
-// ------------------------------       --------------------------------
+//  ------------------------------       --------------------------------
 
 function searchVehicles() {
   let searchTerm = document.querySelector("#searchTerm").value;
@@ -156,16 +158,16 @@ function searchVehicles() {
 }
 // --------------------------------------------
 function deleteProduct(carId) {
-  let product = vehicles.data.find((item) => {
+  let vehicleId = vehicles.data.find((item) => {
     return item.id == carId;
   });
   let vehicle_id = vehicles.data.id;
-  console.log(vehicle_id);
+  console.log(vehicleId);
 
   fetch("https://vast-escarpment-76787.herokuapp.com/delete-car", {
     method: "POST",
     body: JSON.stringify({
-      id: vehicle_id,
+      id: vehicleId,
     }),
     headers: {
       "Content-type": "application/json",

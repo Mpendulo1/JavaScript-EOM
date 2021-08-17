@@ -14,7 +14,7 @@
       function confirmInput() {
         fname = document.forms[0].fname.value;
       }
-      </script>
+    </script>
     <section class="landing" id="section">
       <div class="outer-form">
         <h1 class="heading">Mpendulo's Vehicle Dealership.</h1>
@@ -35,7 +35,11 @@
           </button>
 
           <div id="id01" class="modal">
-            <form onsubmit="confirmInput()" action="./products.html" class="modal-content animate">
+            <form
+              onsubmit="confirmInput()"
+              action="./products.html"
+              class="modal-content animate"
+            >
               <div class="imgcontainer">
                 <span
                   onclick="document.getElementById('id01').style.display='none'"
@@ -158,15 +162,6 @@
                   required
                 />
 
-                <label>
-                  <input
-                    type="checkbox"
-                    checked="checked"
-                    name="remember"
-                    style="margin-bottom: 15px"
-                  />
-                  Remember me
-                </label>
                 <div class="clearfix">
                   <button type="submit" class="signupbtn">Sign Up</button>
                   <button
